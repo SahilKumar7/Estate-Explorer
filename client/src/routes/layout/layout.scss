@@ -1,0 +1,24 @@
+@import "../../responsive.scss";
+
+.layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+
+  .navbar {
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0;
+  }
+
+  .content {
+    height: calc(100vh - 72px);
+    max-width: 1366px;
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--space-lg) 20px 0;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+}
