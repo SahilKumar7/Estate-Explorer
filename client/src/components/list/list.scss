@@ -1,0 +1,55 @@
+@import "../../responsive.scss";
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+
+  @include sm {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .listItem {
+    position: relative;
+
+    .listActions {
+      display: flex;
+      gap: var(--space-sm);
+      margin-top: var(--space-sm);
+      justify-content: flex-end;
+
+      button {
+        padding: 6px 14px;
+        border-radius: var(--radius-sm);
+        font-size: var(--text-xs);
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        border: 1px solid;
+      }
+
+      .editBtn {
+        border-color: var(--accent);
+        background: transparent;
+        color: var(--accent);
+
+        &:hover {
+          background: var(--accent);
+          color: var(--bg);
+        }
+      }
+
+      .deleteBtn {
+        border-color: var(--danger);
+        background: transparent;
+        color: var(--danger);
+
+        &:hover {
+          background: var(--danger);
+          color: white;
+        }
+      }
+    }
+  }
+}

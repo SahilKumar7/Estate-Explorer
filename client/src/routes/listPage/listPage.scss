@@ -1,0 +1,50 @@
+@import "../../responsive.scss";
+
+.listPage {
+  display: flex;
+  height: 100%;
+  gap: var(--space-lg);
+  animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  .listContainer {
+    flex: 3;
+    height: 100%;
+
+    .wrapper {
+      height: 100%;
+      padding-right: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      overflow-y: auto;
+      padding-bottom: 50px;
+
+      @include sm {
+        padding-right: 0;
+      }
+
+      .cardGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+
+        @include md {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+
+  .mapContainer {
+    flex: 2;
+    height: 100%;
+    background-color: var(--surface);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+
+    @include md {
+      display: none;
+    }
+  }
+}
