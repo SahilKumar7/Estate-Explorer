@@ -1,0 +1,39 @@
+.popupContainer {
+  display: flex;
+  gap: 16px;
+
+  img {
+    width: 64px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    a {
+      font-weight: 600;
+      font-size: var(--text-sm);
+    }
+
+    span {
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+    }
+  }
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: var(--surface-elevated) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-md) !important;
+  border: 1px solid var(--border) !important;
+}
+
+.leaflet-popup-tip {
+  background-color: var(--surface-elevated) !important;
+}

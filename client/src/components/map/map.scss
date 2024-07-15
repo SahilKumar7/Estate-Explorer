@@ -1,0 +1,33 @@
+.map {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+
+  .leaflet-tile-pane {
+    filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+  }
+
+  .leaflet-control-zoom {
+    border: 1px solid var(--border) !important;
+
+    a {
+      background-color: var(--surface-elevated) !important;
+      color: var(--text-primary) !important;
+      border-color: var(--border) !important;
+
+      &:hover {
+        background-color: var(--surface) !important;
+      }
+    }
+  }
+
+  .leaflet-control-attribution {
+    background-color: var(--surface) !important;
+    color: var(--text-muted) !important;
+
+    a {
+      color: var(--text-secondary) !important;
+    }
+  }
+}
