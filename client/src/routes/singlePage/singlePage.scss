@@ -1,0 +1,281 @@
+@import "../../responsive.scss";
+
+.singlePage {
+  display: flex;
+  height: 100%;
+
+  @include md {
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .details {
+    flex: 3;
+    height: 100%;
+    overflow-y: scroll;
+    animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+    @include md {
+      flex: none;
+      height: max-content;
+      margin-bottom: 50px;
+    }
+
+    .wrapper {
+      padding-right: 50px;
+
+      @include lg {
+        padding-right: 20px;
+      }
+      @include md {
+        padding-right: 0px;
+      }
+
+      .info {
+        margin-top: 40px;
+
+        .top {
+          display: flex;
+          justify-content: space-between;
+
+          @include sm {
+            flex-direction: column;
+            gap: 20px;
+          }
+
+          .post {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            h1 {
+              font-weight: 400;
+              color: var(--text-primary);
+              position: relative;
+              padding-bottom: var(--space-md);
+
+              &::after {
+                content: "";
+                display: block;
+                width: 50px;
+                height: 2px;
+                margin-top: var(--space-sm);
+                background: linear-gradient(90deg, var(--accent), transparent);
+                border-radius: 2px;
+              }
+            }
+
+            .address {
+              display: flex;
+              gap: 5px;
+              align-items: center;
+              color: var(--text-secondary);
+              font-size: 14px;
+
+              img {
+                width: 16px;
+                height: 16px;
+                filter: brightness(0) invert(0.6);
+              }
+            }
+
+            .price {
+              padding: 8px 16px;
+              background-color: var(--accent-subtle);
+              border-radius: var(--radius-sm);
+              width: max-content;
+              font-size: var(--text-xl);
+              font-weight: 700;
+              color: var(--accent);
+            }
+          }
+
+          .user {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 0px 40px;
+            border-radius: var(--radius-md);
+            background: linear-gradient(135deg, var(--surface-elevated) 0%, var(--surface) 100%);
+            border: 1px solid var(--border);
+            font-weight: 600;
+            color: var(--text-primary);
+
+            @include sm {
+              padding: 20px 40px;
+            }
+
+            img {
+              width: 50px;
+              height: 50px;
+              border-radius: var(--radius-full);
+              object-fit: cover;
+              border: 2px solid var(--accent);
+            }
+          }
+        }
+
+        .bottom {
+          margin-top: 40px;
+          color: var(--text-secondary);
+          line-height: 1.7;
+        }
+      }
+    }
+  }
+
+  .features {
+    flex: 2;
+    background-color: var(--surface);
+    height: 100%;
+    overflow-y: scroll;
+    animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+
+    @include md {
+      flex: none;
+      height: max-content;
+      margin-bottom: 50px;
+    }
+
+    .wrapper {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include md {
+        padding: 20px;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+        filter: brightness(0) invert(0.7);
+      }
+
+      .title {
+        font-weight: bold;
+        font-size: 18px;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+        position: relative;
+        padding-bottom: var(--space-sm);
+
+        &::after {
+          content: "";
+          display: block;
+          width: 40px;
+          height: 2px;
+          margin-top: var(--space-xs);
+          background: linear-gradient(90deg, var(--accent), transparent);
+          border-radius: 2px;
+        }
+      }
+
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+          background-color: var(--accent-subtle);
+          padding: 6px;
+          border-radius: var(--radius-sm);
+          width: 36px;
+          height: 36px;
+        }
+
+        .featureText {
+          span {
+            font-weight: bold;
+            color: var(--text-primary);
+          }
+          p {
+            font-size: 14px;
+            color: var(--text-secondary);
+          }
+        }
+      }
+
+      .listVertical {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+        background: linear-gradient(135deg, var(--surface-elevated) 0%, var(--surface) 100%);
+        border-radius: var(--radius-md);
+        border-left: 3px solid var(--accent);
+      }
+
+      .listHorizontal {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        background: linear-gradient(135deg, var(--surface-elevated) 0%, var(--surface) 100%);
+        border-radius: var(--radius-md);
+        border-left: 3px solid var(--accent);
+      }
+
+      .sizes {
+        display: flex;
+        justify-content: space-between;
+
+        @include lg {
+          font-size: 12px;
+        }
+
+        .size {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background-color: var(--surface-elevated);
+          padding: 10px;
+          border-radius: var(--radius-sm);
+          color: var(--text-primary);
+        }
+      }
+
+      .mapContainer {
+        width: 100%;
+        height: 200px;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+          padding: 14px 22px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          background-color: transparent;
+          border: 1px solid var(--accent);
+          border-radius: var(--radius-sm);
+          cursor: pointer;
+          color: var(--accent);
+          font-weight: 500;
+          font-size: var(--text-sm);
+          transition: all 0.25s ease;
+
+          &:hover {
+            background-color: var(--accent);
+            color: var(--bg);
+            box-shadow: 0 0 16px rgba(212, 168, 67, 0.2);
+          }
+
+          img {
+            width: 16px;
+            height: 16px;
+            background: none;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
