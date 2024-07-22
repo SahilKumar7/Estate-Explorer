@@ -1,0 +1,150 @@
+@import "../../responsive.scss";
+
+.profilePage {
+  display: flex;
+  height: 100%;
+
+  @include md {
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .details {
+    flex: 3;
+    overflow-y: scroll;
+    padding-bottom: 50px;
+    animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+    @include md {
+      flex: none;
+      height: max-content;
+    }
+
+    .wrapper {
+      padding-right: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+          font-weight: 300;
+          color: var(--text-primary);
+          position: relative;
+          padding-bottom: var(--space-sm);
+
+          &::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 2px;
+            margin-top: var(--space-xs);
+            background: linear-gradient(90deg, var(--accent), transparent);
+            border-radius: 2px;
+          }
+        }
+
+        button {
+          padding: 10px 20px;
+          background-color: transparent;
+          border: 1px solid var(--accent);
+          color: var(--accent);
+          cursor: pointer;
+          border-radius: var(--radius-sm);
+          font-weight: 500;
+          font-size: var(--text-sm);
+          transition: all 0.25s ease;
+
+          &:hover {
+            background-color: var(--accent);
+            color: var(--bg);
+            box-shadow: 0 0 16px rgba(212, 168, 67, 0.2);
+          }
+        }
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        span {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          color: var(--text-secondary);
+
+          b {
+            color: var(--text-primary);
+          }
+        }
+
+        .infoActions {
+          display: flex;
+          gap: var(--space-sm);
+
+          button {
+            width: max-content;
+            padding: 8px 18px;
+            cursor: pointer;
+            border-radius: var(--radius-sm);
+            font-weight: 500;
+            font-size: var(--text-sm);
+            transition: all 0.25s ease;
+          }
+
+          .logoutBtn {
+            background-color: transparent;
+            border: 1px solid var(--danger);
+            color: var(--danger);
+
+            &:hover {
+              background-color: var(--danger);
+              color: white;
+            }
+          }
+
+          .deleteAccountBtn {
+            background-color: transparent;
+            border: 1px solid var(--text-muted);
+            color: var(--text-muted);
+
+            &:hover {
+              border-color: var(--danger);
+              color: var(--danger);
+            }
+          }
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: var(--radius-full);
+          object-fit: cover;
+          border: 2px solid var(--accent);
+        }
+      }
+    }
+  }
+
+  .chatContainer {
+    flex: 2;
+    background-color: var(--surface);
+    height: 100%;
+    animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+
+    @include md {
+      flex: none;
+      height: max-content;
+    }
+
+    .wrapper {
+      padding: 0px 20px;
+      height: 100%;
+    }
+  }
+}
