@@ -1,0 +1,179 @@
+@import "../../responsive.scss";
+
+.newPostPage {
+  height: 100%;
+  display: flex;
+
+  @include md {
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .formContainer {
+    flex: 3;
+    overflow: scroll;
+
+    .wrapper {
+      margin: 30px 50px 100px 0px;
+
+      form {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .item {
+          width: 30%;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+
+          @include sm {
+            width: 100%;
+          }
+
+          label {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+          }
+
+          input {
+            padding: 16px 20px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background-color: var(--surface-elevated);
+            color: var(--text-primary);
+            font-size: var(--text-base);
+            transition: border-color 0.3s ease;
+
+            &::placeholder {
+              color: var(--text-muted);
+            }
+
+            &:focus {
+              outline: none;
+              border-color: var(--accent);
+            }
+          }
+
+          select {
+            padding: 16px 20px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background-color: var(--surface-elevated);
+            color: var(--text-primary);
+            font-size: var(--text-base);
+            transition: border-color 0.3s ease;
+
+            &:focus {
+              outline: none;
+              border-color: var(--accent);
+            }
+
+            option {
+              background-color: var(--surface-elevated);
+              color: var(--text-primary);
+            }
+          }
+
+          &.description {
+            width: 100%;
+            height: 320px;
+
+            .quill {
+              > .ql-toolbar {
+                background-color: var(--surface-elevated);
+                border-color: var(--border);
+                border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+
+                .ql-stroke {
+                  stroke: var(--text-secondary);
+                }
+                .ql-fill {
+                  fill: var(--text-secondary);
+                }
+                .ql-picker-label {
+                  color: var(--text-secondary);
+                }
+              }
+
+              > .ql-container {
+                background-color: var(--surface);
+                border-color: var(--border);
+                border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+                color: var(--text-primary);
+
+                > .ql-editor {
+                  height: 200px;
+                  font-size: 16px;
+
+                  &.ql-blank::before {
+                    color: var(--text-muted);
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .sendButton {
+          width: 30%;
+
+          @include sm {
+            width: 100%;
+            padding: 16px;
+          }
+          border-radius: var(--radius-sm);
+          border: none;
+          background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+          color: var(--bg);
+          font-weight: bold;
+          font-size: var(--text-base);
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            box-shadow: 0 0 20px rgba(212, 168, 67, 0.3);
+          }
+        }
+      }
+    }
+  }
+
+  .sideContainer {
+    flex: 2;
+    background: linear-gradient(135deg, var(--surface-elevated) 0%, var(--bg) 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    @include md {
+      padding: var(--space-xl) 0;
+    }
+
+    img {
+      width: 50%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    button {
+      padding: 12px 24px;
+      background: transparent;
+      border: 1px dashed var(--border-light);
+      color: var(--text-secondary);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+    }
+  }
+}
